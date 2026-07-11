@@ -39,11 +39,11 @@ export const metadata: Metadata = {
 };
 
 // Set theme before paint to avoid a flash of the wrong mode.
-// Storage access is fully guarded: in sandboxes where localStorage or
-// matchMedia throw or are missing, this silently falls back to light mode
-// and never blocks rendering.
+// No Web Storage is used: the initial theme is derived purely from the OS
+// prefers-color-scheme. matchMedia is guarded so this can never throw or
+// block rendering.
 const themeScript = `
-(function(){var t=null;try{t=window.localStorage.getItem('theme');}catch(e){}var m=false;try{m=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;}catch(e){}try{if(t==='dark'||(t!=='light'&&m)){document.documentElement.classList.add('dark');}}catch(e){}})();
+(function(){try{if(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){document.documentElement.classList.add('dark');}}catch(e){}})();
 `;
 
 const personJsonLd = {
