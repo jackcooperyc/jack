@@ -66,24 +66,41 @@ export function WorkRow({
             <StackList stack={project.stack} />
           </div>
 
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls={panelId}
-            className="accent-link mt-6 inline-flex items-center gap-1.5 text-sm font-medium"
-          >
-            {open ? "Hide case study" : "Read the case study"}
-            <span
-              aria-hidden="true"
-              className={
-                "transition-transform duration-300 " +
-                (open ? "rotate-90" : "group-hover:translate-x-0.5")
-              }
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <button
+              type="button"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls={panelId}
+              className="accent-link inline-flex items-center gap-1.5 text-sm font-medium"
             >
-              →
-            </span>
-          </button>
+              {open ? "Hide case study" : "Read the case study"}
+              <span
+                aria-hidden="true"
+                className={
+                  "transition-transform duration-300 " +
+                  (open ? "rotate-90" : "group-hover:translate-x-0.5")
+                }
+              >
+                →
+              </span>
+            </button>
+
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                aria-label={`Visit the live ${project.name} app (opens in a new tab)`}
+                className="link-underline inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text)]"
+              >
+                Visit live app
+                <span aria-hidden="true" className="text-[var(--muted)]">
+                  ↗
+                </span>
+              </a>
+            )}
+          </div>
         </div>
       </div>
 

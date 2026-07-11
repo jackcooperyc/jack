@@ -76,7 +76,10 @@
         <p class="kicker">Compliance-first operating system for dispensaries</p>
         <p class="summary">An orchestration layer for dispensaries and smoke shops that ties compliance, marketing, and customer lifecycle into one system — not a point-of-sale clone.</p>
         <div class="meta"><span class="chip">Next.js</span><span class="chip">Frappe patterns</span><span class="chip">Compliance adapters</span><span class="chip">CRM</span></div>
-        <button class="read-more" data-expand="detail-cupr-os" aria-expanded="false" aria-controls="detail-cupr-os">Read the case study →</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-cupr-os" aria-expanded="false" aria-controls="detail-cupr-os">Read the case study →</button>
+          
+        </div>
       </div>
     </div>
     <div class="case-detail" id="detail-cupr-os"><div class="case-grid"><div><div class="case-section"><h4>Context</h4><p>Dispensaries and smoke shops run on a patchwork of tools: a point-of-sale system for transactions, a spreadsheet for compliance, a separate service for the website, and yet another for outreach. Each one holds part of the truth and none of them talk to each other.</p><p>CŪPR.OS starts from the operator's day, not the transaction. It treats compliance as the constraint that shapes everything else — inventory, marketing, and customer contact all inherit the same rules.</p></div><div class="case-section"><h4>Problem</h4><p>Regulated retail carries a compliance surface that changes by state and by product. Owners spend hours reconciling what they sold against what they are allowed to say, sell, and advertise.</p><p>Bolt-on marketing tools make this worse: they let staff publish claims or promotions that violate state rules without ever checking. The gap between the sales system and the compliance system is where the risk lives.</p></div><div class="case-section"><h4>System</h4><p>CŪPR.OS is built as a set of connected modules over a shared data model. An AI compliance studio drafts and screens copy against state rules before anything ships. A website builder and an ad platform read from the same product and compliance data, so a promotion can't reference a product that isn't allowed in that market.</p><p>A CRM and outreach lifecycle sits on top, tracking customers through their first visit, follow-up, and retention — with the same compliance guardrails applied to every message.</p></div><div class="case-section"><h4>Decisions</h4><p>Orchestration over replacement. Operators already have point-of-sale hardware they trust; CŪPR.OS integrates rather than forcing a rip-and-replace.</p><p>Compliance as a first-class data concern, not a review step. Rules are modeled once and reused across the studio, the site builder, and the ad platform, so a single source governs every surface.</p><p>Built across Next.js and Frappe patterns to keep the operational back office and the customer-facing surfaces on one coherent model.</p></div><div class="case-section"><h4>Current state</h4><p>In active development. Core modules — compliance studio, website builder, ad platform, and CRM/outreach — are being built against the shared model. Specific coverage and integration details are evolving as the product is validated with operators.</p></div><p class="accent-note">Positioned as an orchestration layer that sits above existing point-of-sale hardware, not a replacement for it.</p></div>
@@ -88,6 +91,7 @@
         <div class="mrow"><span class="mkey">Year</span><span class="mval">2025—</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">Next.js · Frappe patterns · Compliance adapters · CRM</span></div>
       </div>
+      
     </aside></div></div>
   </article>
   <article class="work-row flip" id="budbook">
@@ -102,7 +106,10 @@
         <p class="kicker">Cannabis journal, inventory &amp; product intelligence</p>
         <p class="summary">A consumer journal and product-intelligence experience for cannabis: track what you have, what you've tried, and what it actually was — backed by scanned lab data.</p>
         <div class="meta"><span class="chip">Next.js</span><span class="chip">Drizzle</span><span class="chip">Neon Postgres</span></div>
-        <button class="read-more" data-expand="detail-budbook" aria-expanded="false" aria-controls="detail-budbook">Read the case study →</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-budbook" aria-expanded="false" aria-controls="detail-budbook">Read the case study →</button>
+          <a class="live-link" href="https://budbook.cupr.app" target="_blank" rel="noreferrer noopener" aria-label="Visit the live BudBook app (opens in a new tab)">Visit live app <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </div>
     <div class="case-detail" id="detail-budbook"><div class="case-grid"><div><div class="case-section"><h4>Context</h4><p>People who use cannabis regularly have no good way to remember what worked. Names change, packaging is inconsistent, and the lab data that actually describes a product is buried in a QR code no one scans twice.</p><p>BudBook gives that record a home. It is a personal journal, an inventory, and a reference layer that connects what you own to what it actually contains.</p></div><div class="case-section"><h4>Problem</h4><p>The useful information — cannabinoid and terpene content from a Certificate of Analysis — is disconnected from the moment of use. Without it, a journal is just notes with no structure to compare across sessions.</p><p>Existing consumer apps lean on strain names, which are unreliable. The data that would make entries comparable is the data people never capture.</p></div><div class="case-section"><h4>System</h4><p>BudBook is organized around a set of connected surfaces: a dashboard for the current picture, a journal for sessions, a stash for inventory, and a Cannadex reference. A COA scanner pulls lab data in so entries carry real product detail rather than guesses.</p><p>A conversational assistant, Buddy AI, helps navigate and interpret that record. Friends and circles add a social layer for sharing finds without turning the journal into a public feed.</p></div><div class="case-section"><h4>Decisions</h4><p>Anchor entries to lab data, not strain names. The COA scanner makes the record trustworthy enough to compare over time.</p><p>Keep the primary experience personal. Social features (friends, circles) are additive, never the default surface.</p><p>Built on Next.js with Drizzle over Neon Postgres to keep the data model explicit and the schema easy to evolve as features land.</p></div><div class="case-section"><h4>Current state</h4><p>In development. The core surfaces — dashboard, journal, stash, Cannadex, Buddy AI, COA scanner, friends, and circles — define the product shape and are being built out. Feature depth and availability are still moving.</p></div><p class="accent-note">Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.</p></div>
@@ -114,6 +121,7 @@
         <div class="mrow"><span class="mkey">Year</span><span class="mval">2025—</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">Next.js · Drizzle · Neon Postgres</span></div>
       </div>
+      <a class="live-cta" href="https://budbook.cupr.app" target="_blank" rel="noreferrer noopener" aria-label="Visit the live BudBook app (opens in a new tab)">Visit live app <span aria-hidden="true">↗</span></a>
     </aside></div></div>
   </article>
   <article class="work-row" id="vineyard-platform">
@@ -136,7 +144,10 @@
         <p class="kicker">Field operations for Cooper Estate Vineyard</p>
         <p class="summary">An operations platform for a working vineyard, built around a hard product constraint: the field has no reliable connectivity, so the tool has to work offline.</p>
         <div class="meta"><span class="chip">Next.js 16</span><span class="chip">Prisma 7</span><span class="chip">Neon Postgres</span><span class="chip">Vercel</span><span class="chip">Mapbox</span></div>
-        <button class="read-more" data-expand="detail-vineyard-platform" aria-expanded="false" aria-controls="detail-vineyard-platform">Read the case study →</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-vineyard-platform" aria-expanded="false" aria-controls="detail-vineyard-platform">Read the case study →</button>
+          
+        </div>
       </div>
     </div>
     <div class="case-detail" id="detail-vineyard-platform"><div class="case-grid"><div><div class="case-section"><h4>Context</h4><p>Vineyard work happens in rows, on foot, away from the office. The people recording what's happening — pruning, spraying, harvest counts — are the least likely to have a stable connection when they need to log it.</p><p>This platform models the vineyard as blocks and rows on a map and lets the crew record work where it happens, then reconcile with the office record.</p></div><div class="case-section"><h4>Problem</h4><p>Most operations software assumes the network is there. In the field it often isn't. A tool that fails when offline pushes people back to paper, and paper never makes it into the system.</p><p>The real challenge is state: capturing work offline and merging it cleanly when the device reconnects, without losing or double-counting entries.</p></div><div class="case-section"><h4>System</h4><p>The platform is a Progressive Web App with an offline field mode. Map-based block and row data comes from Mapbox; the data model lives in Prisma 7 over Neon Postgres, deployed on Vercel.</p><p>Field entries are captured locally and synced when connectivity returns, so the office view and the field view converge on one record of what actually happened.</p></div><div class="case-section"><h4>Decisions</h4><p>Treat offline as the primary case, not an edge case. The field mode is designed first; the connected experience is the reconciliation layer on top of it.</p><p>Map-first data model. Blocks and rows are the unit of work, so the interface matches how the crew already thinks about the vineyard.</p><p>Built on Next.js 16, Prisma 7, and Neon Postgres for a typed, evolvable schema, with Vercel handling deployment.</p></div><div class="case-section"><h4>Current state</h4><p>In development for Cooper Estate Vineyard. The offline/PWA field mode and map-based data model are the current focus. Details are still being validated against real seasonal work.</p></div><p class="accent-note">Offline / PWA field mode is the central product challenge, not a nice-to-have.</p></div>
@@ -148,6 +159,7 @@
         <div class="mrow"><span class="mkey">Year</span><span class="mval">2025—</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">Next.js 16 · Prisma 7 · Neon Postgres · Vercel · Mapbox</span></div>
       </div>
+      
     </aside></div></div>
   </article>
   <article class="work-row flip" id="budbeat">
@@ -162,7 +174,10 @@
         <p class="kicker">Culture, events &amp; community layer</p>
         <p class="summary">The culture and community layer of the wider ecosystem — events and connection around the products, kept deliberately high-level for now.</p>
         <div class="meta"><span class="chip">Next.js</span></div>
-        <button class="read-more" data-expand="detail-budbeat" aria-expanded="false" aria-controls="detail-budbeat">Read the case study →</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-budbeat" aria-expanded="false" aria-controls="detail-budbeat">Read the case study →</button>
+          <a class="live-link" href="https://budbeat.cupr.app" target="_blank" rel="noreferrer noopener" aria-label="Visit the live BudBeat app (opens in a new tab)">Visit live app <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </div>
     <div class="case-detail" id="detail-budbeat"><div class="case-grid"><div><div class="case-section"><h4>Context</h4><p>Products don't live on their own — the people who use them gather around music, events, and shared interest. BudBeat is the layer that holds that cultural and community activity within the wider ecosystem.</p></div><div class="case-section"><h4>Problem</h4><p>Community and culture are usually an afterthought bolted onto a product. When there's no dedicated home for events and connection, the activity scatters across channels no one owns.</p></div><div class="case-section"><h4>System</h4><p>BudBeat is designed as the events and community surface that connects to the rest of the ecosystem, giving culture a first-class place rather than leaving it to third-party channels. Exact mechanics are still being defined.</p></div><div class="case-section"><h4>Decisions</h4><p>Keep it a distinct layer with its own voice rather than folding community into a product tab. The tone here is present and cultural, not operational.</p></div><div class="case-section"><h4>Current state</h4><p>Early. BudBeat's role in the ecosystem is defined; specific features and implementation are being worked out and are described here at a high level on purpose.</p></div><p class="accent-note">Implementation details are intentionally kept high-level where they aren't finalized.</p></div>
@@ -174,6 +189,7 @@
         <div class="mrow"><span class="mkey">Year</span><span class="mval">2025—</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">Next.js</span></div>
       </div>
+      <a class="live-cta" href="https://budbeat.cupr.app" target="_blank" rel="noreferrer noopener" aria-label="Visit the live BudBeat app (opens in a new tab)">Visit live app <span aria-hidden="true">↗</span></a>
     </aside></div></div>
   </article>
   <article class="work-row" id="matchbox">
@@ -195,7 +211,10 @@
         <p class="kicker">Selected project</p>
         <p class="summary">A selected project presented at a high level. Detailed scope and outcomes will be added as the work is ready to describe.</p>
         <div class="meta"><span class="chip empty">Stack: Not published</span></div>
-        <button class="read-more" data-expand="detail-matchbox" aria-expanded="false" aria-controls="detail-matchbox">Read the case study →</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-matchbox" aria-expanded="false" aria-controls="detail-matchbox">Read the case study →</button>
+          
+        </div>
       </div>
     </div>
     <div class="case-detail" id="detail-matchbox"><div class="case-grid"><div><div class="case-section"><h4>Context</h4><p>Matchbox is part of Jack's current body of work. This entry is intentionally kept minimal: it names the project without claiming features, users, or results that aren't ready to be stated.</p></div><div class="case-section"><h4>Problem</h4><p>The problem Matchbox addresses will be described here once the framing is settled. Rather than fill the space with generic claims, this section is held open on purpose.</p></div><div class="case-section"><h4>System</h4><p>System and architecture details are not published yet. They will follow the same narrative structure as the other case studies — context, problem, system, decisions, current state — when there's something concrete to show.</p></div><div class="case-section"><h4>Decisions</h4><p>The main decision so far is one of restraint: present Matchbox honestly and add depth when the work supports it.</p></div><div class="case-section"><h4>Current state</h4><p>In development. A fuller write-up is planned once the project is further along.</p></div><p class="accent-note">Presented deliberately without invented features, metrics, users, or outcomes.</p></div>
@@ -207,6 +226,7 @@
         <div class="mrow"><span class="mkey">Year</span><span class="mval">2025—</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">Not published</span></div>
       </div>
+      
     </aside></div></div>
   </article>
     </div>

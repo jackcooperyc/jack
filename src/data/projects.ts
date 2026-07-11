@@ -37,6 +37,8 @@ export interface Project {
   /** Optional label for how the abstract interface frame should read */
   frame: "compliance" | "journal" | "events" | "vineyard" | "generic";
   accentNote?: string;
+  /** Optional public URL of the live, deployed app for this project */
+  liveUrl?: string;
   featured: boolean;
 }
 
@@ -113,6 +115,7 @@ export const projects: Project[] = [
     domain: "Consumer app · Product intelligence",
     stack: ["Next.js", "Drizzle", "Neon Postgres"],
     frame: "journal",
+    liveUrl: "https://budbook.cupr.app",
     featured: true,
     accentNote:
       "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
@@ -234,6 +237,7 @@ export const projects: Project[] = [
     domain: "Community · Events · Culture",
     stack: ["Next.js"],
     frame: "events",
+    liveUrl: "https://budbeat.cupr.app",
     featured: false,
     accentNote:
       "Implementation details are intentionally kept high-level where they aren't finalized.",

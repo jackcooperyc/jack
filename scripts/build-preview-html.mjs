@@ -53,7 +53,7 @@ const projects = [
     summary: "A consumer journal and product-intelligence experience for cannabis: track what you have, what you've tried, and what it actually was — backed by scanned lab data.",
     status: "In development", year: "2025—", role: "Founder, product & full-stack",
     domain: "Consumer app · Product intelligence", stack: ["Next.js", "Drizzle", "Neon Postgres"],
-    frame: "journal", featured: true,
+    frame: "journal", liveUrl: "https://budbook.cupr.app", featured: true,
     accentNote: "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
     sections: [
       { heading: "Context", body: ["People who use cannabis regularly have no good way to remember what worked. Names change, packaging is inconsistent, and the lab data that actually describes a product is buried in a QR code no one scans twice.", "BudBook gives that record a home. It is a personal journal, an inventory, and a reference layer that connects what you own to what it actually contains."] },
@@ -100,7 +100,7 @@ const projects = [
     summary: "The culture and community layer of the wider ecosystem — events and connection around the products, kept deliberately high-level for now.",
     status: "In development", year: "2025—", role: "Founder, product",
     domain: "Community · Events · Culture", stack: ["Next.js"],
-    frame: "events", featured: false,
+    frame: "events", liveUrl: "https://budbeat.cupr.app", featured: false,
     accentNote: "Implementation details are intentionally kept high-level where they aren't finalized.",
     sections: [
       { heading: "Context", body: ["Products don't live on their own — the people who use them gather around music, events, and shared interest. BudBeat is the layer that holds that cultural and community activity within the wider ecosystem."] },
@@ -217,6 +217,7 @@ function caseDetail(p) {
         <div class="mrow"><span class="mkey">Year</span><span class="mval">${e(p.year)}</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">${e(stackVal)}</span></div>
       </div>
+      ${p.liveUrl ? `<a class="live-cta" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>` : ""}
     </aside>`;
   return `<div class="case-detail" id="detail-${p.slug}"><div class="case-grid"><div>${secs}${note}</div>${sidebar}</div></div>`;
 }
@@ -239,7 +240,10 @@ function workRow(p, i) {
         <p class="kicker">${e(p.kicker)}</p>
         <p class="summary">${e(p.summary)}</p>
         <div class="meta">${chips}</div>
-        <button class="read-more" data-expand="detail-${p.slug}" aria-expanded="false" aria-controls="detail-${p.slug}">Read the case study \u2192</button>
+        <div class="actions">
+          <button class="read-more" data-expand="detail-${p.slug}" aria-expanded="false" aria-controls="detail-${p.slug}">Read the case study \u2192</button>
+          ${p.liveUrl ? `<a class="live-link" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>` : ""}
+        </div>
       </div>
     </div>
     ${caseDetail(p)}

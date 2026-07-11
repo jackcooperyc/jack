@@ -257,12 +257,25 @@ html.dark .theme-toggle .icon-sun { display: block; }
 .work-copy .meta {
   margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem 0.5rem;
 }
+.work-copy .actions {
+  margin-top: 1.5rem; display: flex; flex-wrap: wrap; align-items: center;
+  gap: 0.5rem 1.5rem;
+}
 .work-copy .read-more {
-  margin-top: 1.5rem; display: inline-block; color: var(--accent);
+  display: inline-block; color: var(--accent);
   font-size: 0.875rem; font-weight: 500; cursor: pointer; background: none;
   border: none; padding: 0; font-family: inherit;
 }
 .work-copy .read-more:hover { color: var(--accent-hover); }
+.work-copy .live-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.875rem; font-weight: 500; color: var(--text);
+  text-decoration: none; border-bottom: 1px solid var(--border-strong);
+  padding-bottom: 1px; transition: color 0.2s, border-color 0.2s;
+}
+.work-copy .live-link span { color: var(--muted); }
+.work-copy .live-link:hover { color: var(--accent); border-color: var(--accent); }
+.work-copy .live-link:hover span { color: var(--accent); }
 
 /* status pill */
 .pill {
@@ -385,6 +398,15 @@ html.dark .theme-toggle .icon-sun { display: block; }
   border-left: 2px solid var(--accent); padding: 0.25rem 0 0.25rem 1rem;
   color: var(--muted); font-style: italic; margin-top: 1.5rem; line-height: 1.6;
 }
+
+.live-cta {
+  margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.875rem; font-weight: 500; color: var(--text);
+  text-decoration: none; border: 1px solid var(--border);
+  background: var(--surface); border-radius: var(--radius-md);
+  padding: 0.6rem 1rem; transition: color 0.2s, border-color 0.2s;
+}
+.live-cta:hover { color: var(--accent); border-color: var(--accent); }
 
 .systemmap { border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); padding: 1.25rem; }
 .systemmap .smhead {

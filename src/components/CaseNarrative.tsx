@@ -80,6 +80,18 @@ export function CaseNarrative({
               <dd className="text-sm text-[var(--muted)]">{project.year}</dd>
             </div>
           </dl>
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label={`Visit the live ${project.name} app (opens in a new tab)`}
+              className="mt-6 inline-flex items-center gap-2 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] px-4 py-2.5 text-sm font-medium text-[var(--text)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent)]"
+            >
+              Visit live app
+              <span aria-hidden="true">↗</span>
+            </a>
+          )}
         </div>
       </aside>
     </div>
