@@ -10,3 +10,6 @@ next-env.d.ts
 
 # QA screenshots (local only)
 /qa
+
+# TypeScript incremental build info
+*.tsbuildinfo

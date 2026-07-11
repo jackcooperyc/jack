@@ -1,8 +1,7 @@
 "use client";
 
 import { useSyncExternalStore, useCallback } from "react";
-
-type Theme = "light" | "dark";
+import { writeStoredTheme, type Theme } from "@/lib/theme";
 
 function subscribe(callback: () => void) {
   const observer = new MutationObserver(callback);
@@ -26,12 +25,13 @@ export function ThemeToggle() {
   const isDark = theme === "dark";
 
   const toggle = useCallback(() => {
+    // The DOM class is the source of truth for the current theme, so the
+    // toggle always works visually even when storage is blocked. Persistence
+    // degrades to an in-memory fallback and never throws.
     const root = document.documentElement;
     const next: Theme = root.classList.contains("dark") ? "light" : "dark";
     root.classList.toggle("dark", next === "dark");
-    try {
-      localStorage.setItem("theme", next);
-    } catch {}
+    writeStoredTheme(next);
   }, []);
 
   return (

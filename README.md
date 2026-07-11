@@ -84,7 +84,43 @@ globally.
 Visuals are drawn diagrams and interface abstractions (`InterfaceFrame`,
 `SystemMap`) — no stock photography and no fabricated screenshots.
 
+## Static export
+
+`next.config.ts` sets `output: "export"`, so **`npm run build` emits a fully
+static `out/` directory** — `index.html` at the root plus one folder per route
+(`work/cupr-os/index.html`, etc.), `robots.txt`, `sitemap.xml`, `icon.svg`,
+`404.html`, and hashed assets under `_next/`. This makes the site compatible
+with plain static hosting (including `deploy_website` previews) while remaining
+fully Vercel-ready.
+
+Details:
+
+- `trailingSlash: true` so every route resolves as a directory index under
+  static hosting; internal links are emitted with trailing slashes to match.
+- `images.unoptimized: true` (no server image optimizer under export). The site
+  uses no `next/image`, so this is only defensive.
+- `src/app/robots.ts` and `src/app/sitemap.ts` set `export const dynamic =
+  "force-static"`, required for Metadata Route files under `output: export`.
+
+Smoke-test the export locally:
+
+```bash
+npm run build
+npx serve out           # or any static file server
+```
+
+## Theme persistence (storage-safe)
+
+Theme state lives on the `<html>` `.dark` class, which is the single source of
+truth — so the toggle always works visually. Persistence is handled by
+`src/lib/theme.ts`, which guards every `localStorage` access and falls back to an
+in-memory value when Web Storage is unavailable or throws (e.g. locked-down
+preview sandboxes). The pre-paint inline script in `src/app/layout.tsx` is
+similarly guarded and degrades to light mode if storage/`matchMedia` are
+unavailable. Nothing in the theme path can throw.
+
 ## Deploy
 
-Static-friendly; deploy to Vercel with no configuration. No environment
-variables or backend required for v1.
+Static-friendly; deploy to Vercel with no configuration, or serve the `out/`
+directory on any static host. No environment variables or backend required for
+v1.
