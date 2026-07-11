@@ -16,7 +16,7 @@
         window.matchMedia("(prefers-color-scheme: dark)").matches) {
       root.classList.add("dark");
     }
-  } catch (e) { /* ignore */ }
+  } catch (_err) { /* prefers-color-scheme unavailable; keep light default */ }
 
   function wireThemeToggle() {
     var btn = document.getElementById("theme-toggle");

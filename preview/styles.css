@@ -239,9 +239,10 @@ html.dark .theme-toggle .icon-sun { display: block; }
 .work-list { display: flex; flex-direction: column; gap: 5rem; }
 @media (min-width: 640px) { .work-list { gap: 7rem; } }
 
-.work-row { display: grid; gap: 2rem; align-items: center; }
+.work-row { display: block; }
+.work-presentation { display: grid; gap: 2rem; align-items: center; }
 @media (min-width: 900px) {
-  .work-row { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+  .work-presentation { grid-template-columns: 1fr 1fr; gap: 3.5rem; }
   .work-row.flip .work-visual { order: 2; }
   .work-row.flip .work-copy { order: 1; }
 }
@@ -358,12 +359,15 @@ html.dark .theme-toggle .icon-sun { display: block; }
 .event .badge.live { border-color: var(--accent); color: var(--accent); }
 .event .lines { flex: 1; display: flex; flex-direction: column; gap: 0.375rem; }
 
-/* ---------- case study detail (expandable) ---------- */
+/* ---------- case study detail (expandable) ----------
+   Full-width row beneath the two-column .work-presentation. Because
+   .case-detail is a direct child of .work-row (a block container), it spans
+   the full standard content width rather than the editorial column. */
 .case-detail {
   display: none;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   border-top: 1px solid var(--border);
-  padding-top: 2rem;
+  padding-top: 2.5rem;
 }
 .case-detail.open { display: block; animation: reveal 0.5s cubic-bezier(0.16,1,0.3,1) forwards; }
 .case-grid { display: grid; gap: 2.5rem; }

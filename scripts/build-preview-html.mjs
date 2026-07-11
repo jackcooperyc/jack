@@ -228,19 +228,21 @@ function workRow(p, i) {
     : `<span class="chip empty">Stack: Not published</span>`;
   return `
   <article class="work-row${flip ? " flip" : ""}" id="${p.slug}">
-    <div class="work-visual">${frameHTML(p)}</div>
-    <div class="work-copy">
-      <div class="status-row">
-        <span class="pill"><span class="dot"></span>${e(p.status)}</span>
-        <span class="mono faint" style="font-size:0.7rem">${e(p.year)}</span>
+    <div class="work-presentation">
+      <div class="work-visual">${frameHTML(p)}</div>
+      <div class="work-copy">
+        <div class="status-row">
+          <span class="pill"><span class="dot"></span>${e(p.status)}</span>
+          <span class="mono faint" style="font-size:0.7rem">${e(p.year)}</span>
+        </div>
+        <h3>${e(p.name)}</h3>
+        <p class="kicker">${e(p.kicker)}</p>
+        <p class="summary">${e(p.summary)}</p>
+        <div class="meta">${chips}</div>
+        <button class="read-more" data-expand="detail-${p.slug}" aria-expanded="false" aria-controls="detail-${p.slug}">Read the case study \u2192</button>
       </div>
-      <h3>${e(p.name)}</h3>
-      <p class="kicker">${e(p.kicker)}</p>
-      <p class="summary">${e(p.summary)}</p>
-      <div class="meta">${chips}</div>
-      <button class="read-more" data-expand="detail-${p.slug}" aria-expanded="false" aria-controls="detail-${p.slug}">Read the case study \u2192</button>
-      ${caseDetail(p)}
     </div>
+    ${caseDetail(p)}
   </article>`;
 }
 
