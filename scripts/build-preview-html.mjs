@@ -32,6 +32,7 @@ const projects = [
     domain: "B2B SaaS · Regulated retail", stack: ["Next.js", "Frappe patterns", "Compliance adapters", "CRM"],
     frame: "compliance", liveUrl: "https://os-demo.cupr.app", githubUrl: site.github,
     screenshot: { src: "work/cupr-os/ui.png", alt: "CŪPR.OS operations dashboard with module navigation" },
+    logo: { src: "work/cupr-os/logo.png", alt: "CŪPR.OS logo" },
     featured: true,
     accentNote: "Positioned as an orchestration layer that sits above existing point-of-sale hardware, not a replacement for it.",
     sections: [
@@ -55,7 +56,9 @@ const projects = [
     summary: "A consumer journal and product-intelligence experience for cannabis: track what you have, what you've tried, and what it actually was — backed by scanned lab data.",
     status: "In development", year: "2025—", role: "Founder, product & full-stack",
     domain: "Consumer app · Product intelligence", stack: ["Next.js", "Drizzle", "Neon Postgres"],
-    frame: "journal", liveUrl: "https://budbook.cupr.app", githubUrl: site.github, featured: true,
+    frame: "journal", liveUrl: "https://budbook.cupr.app", githubUrl: site.github,
+    logo: { src: "work/budbook/logo.png", alt: "BudBook logo" },
+    featured: true,
     accentNote: "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
     sections: [
       { heading: "Context", body: ["People who use cannabis regularly have no good way to remember what worked. Names change, packaging is inconsistent, and the lab data that actually describes a product is buried in a QR code no one scans twice.", "BudBook gives that record a home. It is a personal journal, an inventory, and a reference layer that connects what you own to what it actually contains."] },
@@ -104,6 +107,7 @@ const projects = [
     domain: "Community · Events · Culture", stack: ["Next.js"],
     frame: "events", liveUrl: "https://budbeat.cupr.app.cupr.app/budbeat-app", githubUrl: site.github,
     screenshot: { src: "work/budbeat/ui.png", alt: "BudBeat home dashboard with freestyle session CTA" },
+    logo: { src: "work/budbeat/logo.png", alt: "BudBeat logo" },
     featured: false,
     accentNote: "Implementation details are intentionally kept high-level where they aren't finalized.",
     sections: [
@@ -140,6 +144,7 @@ const projects = [
     domain: "Infrastructure · Maps · Operations", stack: ["Next.js", "Mapbox", "Vercel"],
     frame: "generic", liveUrl: "https://maps.cupr.app", githubUrl: site.github,
     screenshot: { src: "work/cupr-smokeworks-infrastructure/ui.png", alt: "JCS Ecosystem Map showing brands, commerce spine, and inventory network" },
+    logo: { src: "work/cupr-smokeworks-infrastructure/logo.png", alt: "CŪPR brand logo" },
     featured: false,
     accentNote: "Kept lighter on purpose: the maps surface is concrete; surrounding infra narrative stays high-level where it isn't finalized.",
     sections: [
@@ -164,6 +169,7 @@ const projects = [
     stack: ["Hard-anodized aluminum", "Mechanical override + biometric", "Weather-sealed enclosure"],
     frame: "generic", githubUrl: site.github,
     screenshot: { src: "work/lockbox-apache-110/ui.png", alt: "Apache 110 LockBox product mockup on black" },
+    logo: { src: "work/lockbox-apache-110/logo.png", alt: "LockBox Apache 110 logo" },
     featured: false,
     accentNote: "Archive record from the CŪPR / jcs-consumer-app proprietary hardware lineage — LEGACY series origin, not a software app case study.",
     archive: {
@@ -333,6 +339,11 @@ function workRow(p, i) {
           <span class="pill"><span class="dot"></span>${e(p.status)}</span>
           <span class="mono faint" style="font-size:0.7rem">${e(p.year)}</span>
         </div>
+        ${
+          p.logo
+            ? `<div class="project-logo"><img src="${e(p.logo.src)}" alt="${e(p.logo.alt)}" loading="lazy" /></div>`
+            : ""
+        }
         <h3>${e(p.name)}</h3>
         <p class="kicker">${e(p.kicker)}</p>
         <p class="summary">${e(p.summary)}</p>

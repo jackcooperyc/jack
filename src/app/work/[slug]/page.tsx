@@ -5,6 +5,7 @@ import { projects, getProject } from "@/data/projects";
 import { site } from "@/data/site";
 import { InterfaceFrame } from "@/components/InterfaceFrame";
 import { ProjectLinks } from "@/components/ProjectLinks";
+import { ProjectLogo } from "@/components/ProjectLogo";
 import { SystemMap } from "@/components/SystemMap";
 import { CanvaEmbed } from "@/components/CanvaEmbed";
 import { ArchiveRecord } from "@/components/ArchiveRecord";
@@ -61,6 +62,8 @@ export default async function CaseStudy({
           <StatusPill status={project.status} />
           <span className="mono text-xs text-[var(--faint)]">{project.year}</span>
         </div>
+
+        <ProjectLogo project={project} size="lg" className="mt-6" />
 
         <h1
           className="mt-4 max-w-4xl font-display font-semibold leading-[1.02] tracking-tight"

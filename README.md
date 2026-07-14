@@ -59,11 +59,13 @@ or edit a project.**
 6. Optionally set `screenshot: { src, alt }` pointing at a file under
    `public/work/<slug>/` (e.g. `/work/budbook/ui.png`). When present, it
    replaces the abstract frame on work rows and case studies.
-7. Optionally add `archive` (serial / status / clearance / specs) and
+7. Optionally set `logo: { src, alt }` for a product brand mark (also under
+   `public/work/<slug>/`). Shown on work rows, the work index, and case studies.
+8. Optionally add `archive` (serial / status / clearance / specs) and
    `canvaEmbed` for hardware anatomy embeds (see LockBox · Apache 110).
-8. Optionally add a `systemMap` (array of `{ label, detail }`) for the sidebar
+9. Optionally add a `systemMap` (array of `{ label, detail }`) for the sidebar
    diagram.
-9. Set `featured: true` to surface it on the home page.
+10. Set `featured: true` to surface it on the home page.
 
 The new route (`/work/<slug>`), the work index entry, and the sitemap update
 automatically.

@@ -43,6 +43,8 @@ export interface Project {
   githubUrl?: string;
   /** Real in-app UI shot; when set, replaces the abstract InterfaceFrame schematic */
   screenshot?: { src: string; alt: string };
+  /** Optional brand mark from the product apps */
+  logo?: { src: string; alt: string };
   /** Optional hardware / archive metadata (e.g. LockBox lineage) */
   archive?: {
     serial: string;
@@ -80,6 +82,10 @@ export const projects: Project[] = [
     screenshot: {
       src: "/work/cupr-os/ui.png",
       alt: "CŪPR.OS operations dashboard with module navigation",
+    },
+    logo: {
+      src: "/work/cupr-os/logo.png",
+      alt: "CŪPR.OS logo",
     },
     featured: true,
     accentNote:
@@ -143,6 +149,10 @@ export const projects: Project[] = [
     frame: "journal",
     liveUrl: "https://budbook.cupr.app",
     githubUrl: ORG_GITHUB,
+    logo: {
+      src: "/work/budbook/logo.png",
+      alt: "BudBook logo",
+    },
     featured: true,
     accentNote:
       "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
@@ -272,6 +282,10 @@ export const projects: Project[] = [
       src: "/work/budbeat/ui.png",
       alt: "BudBeat home dashboard with freestyle session CTA",
     },
+    logo: {
+      src: "/work/budbeat/logo.png",
+      alt: "BudBeat logo",
+    },
     featured: false,
     accentNote:
       "Implementation details are intentionally kept high-level where they aren't finalized.",
@@ -380,6 +394,10 @@ export const projects: Project[] = [
       src: "/work/cupr-smokeworks-infrastructure/ui.png",
       alt: "JCS Ecosystem Map showing brands, commerce spine, and inventory network",
     },
+    logo: {
+      src: "/work/cupr-smokeworks-infrastructure/logo.png",
+      alt: "CŪPR brand logo",
+    },
     featured: false,
     accentNote:
       "Kept lighter on purpose: the maps surface is concrete; surrounding infra narrative stays high-level where it isn't finalized.",
@@ -443,6 +461,10 @@ export const projects: Project[] = [
     screenshot: {
       src: "/work/lockbox-apache-110/ui.png",
       alt: "Apache 110 LockBox product mockup on black",
+    },
+    logo: {
+      src: "/work/lockbox-apache-110/logo.png",
+      alt: "LockBox Apache 110 logo",
     },
     featured: false,
     accentNote:

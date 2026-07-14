@@ -6,6 +6,7 @@ import type { Project } from "@/data/projects";
 import { InterfaceFrame } from "./InterfaceFrame";
 import { CaseNarrative } from "./CaseNarrative";
 import { ProjectLinks } from "./ProjectLinks";
+import { ProjectLogo } from "./ProjectLogo";
 import { StatusPill, StackList } from "./bits";
 
 /**
@@ -51,6 +52,8 @@ export function WorkRow({
             </span>
             <StatusPill status={project.status} />
           </div>
+
+          <ProjectLogo project={project} size="md" className="mt-4" />
 
           <h3 className="mt-3 text-2xl font-semibold sm:text-[2rem]">
             <Link href={`/work/${project.slug}`} className="link-underline">

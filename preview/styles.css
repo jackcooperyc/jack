@@ -276,6 +276,23 @@ html.dark .theme-toggle .icon-sun { display: block; }
 .work-copy .live-link span { color: var(--muted); }
 .work-copy .live-link:hover { color: var(--accent); border-color: var(--accent); }
 .work-copy .live-link:hover span { color: var(--accent); }
+.project-logo {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.85rem 0 0.35rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: #0a0a0a;
+}
+.project-logo img {
+  display: block;
+  height: 2.25rem;
+  width: auto;
+  max-width: 14rem;
+  object-fit: contain;
+  object-position: left center;
+}
 
 /* status pill */
 .pill {

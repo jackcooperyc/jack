@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { ProjectLogo } from "@/components/ProjectLogo";
 import { StatusPill, StackList } from "@/components/bits";
 
 export const metadata: Metadata = {
@@ -41,6 +42,7 @@ export default function WorkIndex() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div>
+                    <ProjectLogo project={p} size="sm" className="mb-2" />
                     <h2 className="text-xl font-semibold">
                       <span className="link-underline">{p.name}</span>
                     </h2>
