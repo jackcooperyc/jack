@@ -253,8 +253,12 @@ export const projects: Project[] = [
     domain: "Community · Events · Culture",
     stack: ["Next.js"],
     frame: "events",
-    liveUrl: "https://budbeat.cupr.app",
+    liveUrl: "https://budbeat.cupr.app.cupr.app/budbeat-app",
     githubUrl: ORG_GITHUB,
+    screenshot: {
+      src: "/work/budbeat/ui.png",
+      alt: "BudBeat home dashboard with freestyle session CTA",
+    },
     featured: false,
     accentNote:
       "Implementation details are intentionally kept high-level where they aren't finalized.",

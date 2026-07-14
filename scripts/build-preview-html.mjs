@@ -102,7 +102,9 @@ const projects = [
     summary: "The culture and community layer of the wider ecosystem — events and connection around the products, kept deliberately high-level for now.",
     status: "In development", year: "2025—", role: "Founder, product",
     domain: "Community · Events · Culture", stack: ["Next.js"],
-    frame: "events", liveUrl: "https://budbeat.cupr.app", githubUrl: site.github, featured: false,
+    frame: "events", liveUrl: "https://budbeat.cupr.app.cupr.app/budbeat-app", githubUrl: site.github,
+    screenshot: { src: "work/budbeat/ui.png", alt: "BudBeat home dashboard with freestyle session CTA" },
+    featured: false,
     accentNote: "Implementation details are intentionally kept high-level where they aren't finalized.",
     sections: [
       { heading: "Context", body: ["Products don't live on their own — the people who use them gather around music, events, and shared interest. BudBeat is the layer that holds that cultural and community activity within the wider ecosystem."] },

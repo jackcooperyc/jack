@@ -27,7 +27,7 @@ Visitors can open each project's live deployment and GitHub from the portfolio, 
 | CŪPR.OS | `https://os-demo.cupr.app` |
 | BudBook | `https://budbook.cupr.app` |
 | Vineyard Platform | `https://cev.cupr.app` |
-| BudBeat | `https://budbeat.cupr.app` |
+| BudBeat | `https://budbeat.cupr.app.cupr.app/budbeat-app` |
 | Matchbox | `https://matchbox.cupr.app` |
 | Cupr Smokeworks Infrastructure | `https://maps.cupr.app` |
 
