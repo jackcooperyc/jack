@@ -43,6 +43,19 @@ export interface Project {
   githubUrl?: string;
   /** Real in-app UI shot; when set, replaces the abstract InterfaceFrame schematic */
   screenshot?: { src: string; alt: string };
+  /** Optional hardware / archive metadata (e.g. LockBox lineage) */
+  archive?: {
+    serial: string;
+    status: string;
+    clearance: string;
+    specs: string[];
+  };
+  /** Optional Canva watch embed shown on the case-study page */
+  canvaEmbed?: {
+    embedSrc: string;
+    watchUrl: string;
+    title: string;
+  };
   featured: boolean;
 }
 
@@ -408,6 +421,90 @@ export const projects: Project[] = [
       { label: "Ecosystem maps", detail: "maps.cupr.app" },
       { label: "Sites & ops context", detail: "Shared geography" },
       { label: "Product surfaces", detail: "Apps that sit above" },
+    ],
+  },
+  {
+    slug: "lockbox-apache-110",
+    name: "LockBox · Apache 110",
+    kicker: "Series-origin LockBox hardware — Apache 110 (OG)",
+    summary:
+      "The blueprint that started the LockBox lineage: a rugged, weather-sealed vault with the first-generation CŪPR lock — documented as Apache 110 (OG) in the hardware archive.",
+    status: "Prototype",
+    year: "2025—",
+    role: "Founder, industrial design & product",
+    domain: "Hardware · LockBox series · Consumer",
+    stack: [
+      "Hard-anodized aluminum",
+      "Mechanical override + biometric",
+      "Weather-sealed enclosure",
+    ],
+    frame: "generic",
+    githubUrl: ORG_GITHUB,
+    screenshot: {
+      src: "/work/lockbox-apache-110/ui.png",
+      alt: "Apache 110 LockBox product mockup on black",
+    },
+    featured: false,
+    accentNote:
+      "Archive record from the CŪPR / jcs-consumer-app proprietary hardware lineage — LEGACY series origin, not a software app case study.",
+    archive: {
+      serial: "CP-LB-110-APC",
+      status: "LEGACY",
+      clearance: "LVL 01",
+      specs: [
+        "Weight: 850g",
+        "Volume: 1.1L",
+        "Material: Hard-Anodized Aluminum",
+        "Lock: Mechanical Override + Bio",
+      ],
+    },
+    canvaEmbed: {
+      embedSrc:
+        "https://www.canva.com/design/DAHIv90k8-I/h8SkSvncP5dMIaI6Ctlu3Q/watch?embed",
+      watchUrl:
+        "https://www.canva.com/design/DAHIv90k8-I/h8SkSvncP5dMIaI6Ctlu3Q/watch?utm_content=DAHIv90k8-I&utm_campaign=designshare&utm_medium=embeds&utm_source=link",
+      title: "Apache 110 (OG) — Canva design",
+    },
+    sections: [
+      {
+        heading: "Context",
+        body: [
+          "Apache 110 (OG) is the series-origin blueprint in the LockBox hardware lineage — the form, sealing, and lock language that later vaults in the CŪPR catalog build on.",
+          "In the jcs-consumer-app proprietary archive it sits as the LEGACY origin record: serial CP-LB-110-APC, clearance LVL 01.",
+        ],
+      },
+      {
+        heading: "Problem",
+        body: [
+          "Secure, weather-ready storage for cannabis hardware usually splits into soft cases that fail outdoors or vaults that feel industrial and immobile. Early LockBox work needed a single sealed unit that could travel and still feel intentional.",
+        ],
+      },
+      {
+        heading: "System",
+        body: [
+          "Apache 110 is specified as a hard-anodized aluminum enclosure at 850g / 1.1L with the first-generation CŪPR lock: mechanical override plus biometric path.",
+          "The portfolio preserves the archive record and a 360° anatomy walkthrough (Canva) so the industrial story — form, airflow, and precision — stays readable without inventing shipping metrics.",
+        ],
+      },
+      {
+        heading: "Decisions",
+        body: [
+          "Treat Apache 110 as the documented origin of the LockBox series rather than a silent SKU footnote.",
+          "Keep software case studies and hardware archive entries distinct: this page carries serial, clearance, specs, and anatomy — not fabricated unit sales.",
+        ],
+      },
+      {
+        heading: "Current state",
+        body: [
+          "Archived as LEGACY in the proprietary hardware panel. Specs and Canva 360° anatomy are published here as the public portfolio record; deeper patent / series write-ups stay with the LockBox Ūtility Bong filing where they belong.",
+        ],
+      },
+    ],
+    systemMap: [
+      { label: "Enclosure", detail: "Hard-anodized aluminum · 1.1L" },
+      { label: "Lock gen-1", detail: "Mechanical override + bio" },
+      { label: "Seal", detail: "Weather-sealed travel shell" },
+      { label: "Lineage", detail: "Origin for later LockBox SKUs" },
     ],
   },
 ];

@@ -1,6 +1,8 @@
 import type { Project } from "@/data/projects";
 import { ProjectLinks } from "./ProjectLinks";
 import { SystemMap } from "./SystemMap";
+import { CanvaEmbed } from "./CanvaEmbed";
+import { ArchiveRecord } from "./ArchiveRecord";
 
 /**
  * Full-width case-study narrative used by the inline expander on the work
@@ -58,7 +60,7 @@ export function CaseNarrative({
       </div>
 
       <aside className="lg:col-span-5">
-        <div className="lg:sticky lg:top-24">
+        <div className="lg:sticky lg:top-24 space-y-6">
           {project.systemMap ? (
             <SystemMap nodes={project.systemMap} />
           ) : (
@@ -67,7 +69,9 @@ export function CaseNarrative({
               is finalized.
             </div>
           )}
-          <dl className="mt-6 grid gap-4 border-t border-[var(--border)] pt-6">
+          {project.archive && <ArchiveRecord {...project.archive} />}
+          {project.canvaEmbed && <CanvaEmbed {...project.canvaEmbed} />}
+          <dl className="grid gap-4 border-t border-[var(--border)] pt-6">
             <div className="flex gap-3">
               <dt className="eyebrow w-24 shrink-0">Role</dt>
               <dd className="text-sm text-[var(--muted)]">{project.role}</dd>

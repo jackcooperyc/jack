@@ -6,6 +6,8 @@ import { site } from "@/data/site";
 import { InterfaceFrame } from "@/components/InterfaceFrame";
 import { ProjectLinks } from "@/components/ProjectLinks";
 import { SystemMap } from "@/components/SystemMap";
+import { CanvaEmbed } from "@/components/CanvaEmbed";
+import { ArchiveRecord } from "@/components/ArchiveRecord";
 import { StatusPill, StackList } from "@/components/bits";
 
 export function generateStaticParams() {
@@ -109,6 +111,18 @@ export default async function CaseStudy({
           </div>
         </dl>
       </div>
+
+      {project.archive && (
+        <div className="wrap mt-10">
+          <ArchiveRecord {...project.archive} />
+        </div>
+      )}
+
+      {project.canvaEmbed && (
+        <div className="wrap mt-10">
+          <CanvaEmbed {...project.canvaEmbed} />
+        </div>
+      )}
 
       {/* Narrative + system map */}
       <div className="wrap mt-12 grid gap-12 lg:grid-cols-12 lg:gap-16">
