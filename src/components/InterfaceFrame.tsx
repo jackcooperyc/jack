@@ -1,22 +1,55 @@
+import Image from "next/image";
 import type { Project } from "@/data/projects";
 
 /**
- * Abstract interface frame — a designed schematic that suggests each product's
- * shape without fabricating a real screenshot. Everything is drawn with the
- * theme's currentColor + accent, so it reads as a diagram, not a mockup.
+ * Product visual for a project — real in-app screenshot when available,
+ * otherwise an abstract schematic that suggests the product shape without
+ * fabricating a UI. Schematics use theme currentColor + accent.
  */
 
-function Chrome({ children, label }: { children: React.ReactNode; label: string }) {
+function Chrome({
+  children,
+  label,
+  bare = false,
+}: {
+  children: React.ReactNode;
+  label: string;
+  bare?: boolean;
+}) {
   return (
     <div className="overflow-hidden rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)]">
       <div className="flex items-center gap-2 border-b border-[var(--border)] bg-[var(--surface-alt)] px-3.5 py-2">
         <span className="h-2 w-2 rounded-full border border-[var(--border-strong)]" />
         <span className="h-2 w-2 rounded-full border border-[var(--border-strong)]" />
         <span className="h-2 w-2 rounded-full border border-[var(--border-strong)]" />
-        <span className="mono ml-2 text-[0.68rem] text-[var(--faint)]">{label}</span>
+        <span className="mono ml-2 truncate text-[0.68rem] text-[var(--faint)]">
+          {label}
+        </span>
       </div>
-      <div className="p-4 sm:p-5">{children}</div>
+      {bare ? children : <div className="p-4 sm:p-5">{children}</div>}
     </div>
+  );
+}
+
+function ScreenshotFrame({ project }: { project: Project }) {
+  const shot = project.screenshot!;
+  const hostLabel =
+    project.liveUrl?.replace(/^https?:\/\//, "").replace(/\/$/, "") ??
+    project.name.toLowerCase();
+
+  return (
+    <Chrome label={hostLabel} bare>
+      <div className="relative aspect-[16/10] w-full bg-[var(--surface-alt)]">
+        <Image
+          src={shot.src}
+          alt={shot.alt}
+          fill
+          className="object-cover object-top"
+          sizes="(min-width: 1024px) 50vw, 100vw"
+          unoptimized
+        />
+      </div>
+    </Chrome>
   );
 }
 
@@ -24,7 +57,10 @@ function Bar({ w, accent = false }: { w: string; accent?: boolean }) {
   return (
     <span
       className="block h-2 rounded-full"
-      style={{ width: w, background: accent ? "var(--accent)" : "var(--border-strong)" }}
+      style={{
+        width: w,
+        background: accent ? "var(--accent)" : "var(--border-strong)",
+      }}
     />
   );
 }
@@ -74,7 +110,9 @@ function Journal() {
           >
             <span
               className="mb-2 block h-6 w-6 rounded-[var(--radius-xs)]"
-              style={{ background: i === 1 ? "var(--accent)" : "var(--surface-alt)" }}
+              style={{
+                background: i === 1 ? "var(--accent)" : "var(--surface-alt)",
+              }}
             />
             <div className="mono text-[0.66rem] text-[var(--muted)]">{t}</div>
             <div className="mt-2 space-y-1.5">
@@ -99,7 +137,8 @@ function Vineyard() {
                 key={i}
                 className="rounded-[1px]"
                 style={{
-                  background: i === 5 || i === 6 ? "var(--accent)" : "var(--border)",
+                  background:
+                    i === 5 || i === 6 ? "var(--accent)" : "var(--border)",
                   opacity: i === 5 || i === 6 ? 1 : 0.6,
                   minHeight: 14,
                 }}
@@ -132,7 +171,11 @@ function Events() {
           <div key={i} className="flex items-center gap-3">
             <span
               className="mono flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--radius-xs)] border border-[var(--border)] text-[0.62rem] text-[var(--muted)]"
-              style={i === 0 ? { borderColor: "var(--accent)", color: "var(--accent)" } : undefined}
+              style={
+                i === 0
+                  ? { borderColor: "var(--accent)", color: "var(--accent)" }
+                  : undefined
+              }
             >
               {i === 0 ? "LIVE" : "SAT"}
             </span>
@@ -169,7 +212,7 @@ function Generic({ name }: { name: string }) {
   );
 }
 
-export function InterfaceFrame({ project }: { project: Project }) {
+function Schematic({ project }: { project: Project }) {
   switch (project.frame) {
     case "compliance":
       return <Compliance />;
@@ -182,4 +225,11 @@ export function InterfaceFrame({ project }: { project: Project }) {
     default:
       return <Generic name={project.name} />;
   }
+}
+
+export function InterfaceFrame({ project }: { project: Project }) {
+  if (project.screenshot) {
+    return <ScreenshotFrame project={project} />;
+  }
+  return <Schematic project={project} />;
 }

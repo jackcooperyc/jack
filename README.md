@@ -28,7 +28,7 @@ npm run typecheck  # tsc --noEmit
 | Route            | Description                                      |
 | ---------------- | ------------------------------------------------ |
 | `/`              | Home — leads with selected work, not biography   |
-| `/work`          | Work index (all five projects)                   |
+| `/work`          | Work index (all projects)                        |
 | `/work/[slug]`   | Reusable case-study route (SSG per project)      |
 | `/about`         | Approach + short bio + contact                   |
 | `sitemap.xml`    | Generated from the project list                  |
@@ -53,11 +53,15 @@ or edit a project.**
 3. Set `status` (`"In development"`, `"Live / in use"`, or `"Prototype"`),
    `year`, `role`, `domain`, and `stack`.
 4. Set `frame` to one of `compliance | journal | events | vineyard | generic`
-   to pick the abstract interface diagram. Add a new frame in
-   `src/components/InterfaceFrame.tsx` if none fit.
-5. Optionally add a `systemMap` (array of `{ label, detail }`) for the sidebar
+   to pick the abstract interface diagram (used when no screenshot is set).
+   Add a new frame in `src/components/InterfaceFrame.tsx` if none fit.
+5. Optionally set `liveUrl` (branded deploy) and `githubUrl` (repo or org).
+6. Optionally set `screenshot: { src, alt }` pointing at a file under
+   `public/work/<slug>/` (e.g. `/work/budbook/ui.png`). When present, it
+   replaces the abstract frame on work rows and case studies.
+7. Optionally add a `systemMap` (array of `{ label, detail }`) for the sidebar
    diagram.
-6. Set `featured: true` to surface it on the home page.
+8. Set `featured: true` to surface it on the home page.
 
 The new route (`/work/<slug>`), the work index entry, and the sitemap update
 automatically.
@@ -81,8 +85,9 @@ amber). Light/dark mode via a `.dark` class on `<html>`, set before paint to
 avoid flash and toggled by `ThemeToggle`. `prefers-reduced-motion` is respected
 globally.
 
-Visuals are drawn diagrams and interface abstractions (`InterfaceFrame`,
-`SystemMap`) — no stock photography and no fabricated screenshots.
+Visuals prefer real in-app screenshots when provided on a project; otherwise
+`InterfaceFrame` falls back to abstract schematics. `SystemMap` stays a drawn
+diagram. Do not fabricate product UI imagery.
 
 ## Static export
 

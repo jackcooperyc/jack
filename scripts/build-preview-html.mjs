@@ -30,7 +30,9 @@ const projects = [
     summary: "An orchestration layer for dispensaries and smoke shops that ties compliance, marketing, and customer lifecycle into one system — not a point-of-sale clone.",
     status: "In development", year: "2025—", role: "Founder, product architecture & full-stack",
     domain: "B2B SaaS · Regulated retail", stack: ["Next.js", "Frappe patterns", "Compliance adapters", "CRM"],
-    frame: "compliance", featured: true,
+    frame: "compliance", liveUrl: "https://os-demo.cupr.app", githubUrl: site.github,
+    screenshot: { src: "work/cupr-os/ui.png", alt: "CŪPR.OS operations dashboard with module navigation" },
+    featured: true,
     accentNote: "Positioned as an orchestration layer that sits above existing point-of-sale hardware, not a replacement for it.",
     sections: [
       { heading: "Context", body: ["Dispensaries and smoke shops run on a patchwork of tools: a point-of-sale system for transactions, a spreadsheet for compliance, a separate service for the website, and yet another for outreach. Each one holds part of the truth and none of them talk to each other.", "CŪPR.OS starts from the operator's day, not the transaction. It treats compliance as the constraint that shapes everything else — inventory, marketing, and customer contact all inherit the same rules."] },
@@ -53,7 +55,7 @@ const projects = [
     summary: "A consumer journal and product-intelligence experience for cannabis: track what you have, what you've tried, and what it actually was — backed by scanned lab data.",
     status: "In development", year: "2025—", role: "Founder, product & full-stack",
     domain: "Consumer app · Product intelligence", stack: ["Next.js", "Drizzle", "Neon Postgres"],
-    frame: "journal", liveUrl: "https://budbook.cupr.app", featured: true,
+    frame: "journal", liveUrl: "https://budbook.cupr.app", githubUrl: site.github, featured: true,
     accentNote: "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
     sections: [
       { heading: "Context", body: ["People who use cannabis regularly have no good way to remember what worked. Names change, packaging is inconsistent, and the lab data that actually describes a product is buried in a QR code no one scans twice.", "BudBook gives that record a home. It is a personal journal, an inventory, and a reference layer that connects what you own to what it actually contains."] },
@@ -77,7 +79,7 @@ const projects = [
     summary: "An operations platform for a working vineyard, built around a hard product constraint: the field has no reliable connectivity, so the tool has to work offline.",
     status: "In development", year: "2025—", role: "Founder, product & full-stack",
     domain: "Operations · Agriculture · PWA", stack: ["Next.js 16", "Prisma 7", "Neon Postgres", "Vercel", "Mapbox"],
-    frame: "vineyard", featured: true,
+    frame: "vineyard", liveUrl: "https://cev.cupr.app", githubUrl: site.github, featured: true,
     accentNote: "Offline / PWA field mode is the central product challenge, not a nice-to-have.",
     sections: [
       { heading: "Context", body: ["Vineyard work happens in rows, on foot, away from the office. The people recording what's happening — pruning, spraying, harvest counts — are the least likely to have a stable connection when they need to log it.", "This platform models the vineyard as blocks and rows on a map and lets the crew record work where it happens, then reconcile with the office record."] },
@@ -100,7 +102,7 @@ const projects = [
     summary: "The culture and community layer of the wider ecosystem — events and connection around the products, kept deliberately high-level for now.",
     status: "In development", year: "2025—", role: "Founder, product",
     domain: "Community · Events · Culture", stack: ["Next.js"],
-    frame: "events", liveUrl: "https://budbeat.cupr.app", featured: false,
+    frame: "events", liveUrl: "https://budbeat.cupr.app", githubUrl: site.github, featured: false,
     accentNote: "Implementation details are intentionally kept high-level where they aren't finalized.",
     sections: [
       { heading: "Context", body: ["Products don't live on their own — the people who use them gather around music, events, and shared interest. BudBeat is the layer that holds that cultural and community activity within the wider ecosystem."] },
@@ -116,7 +118,9 @@ const projects = [
     summary: "A selected project presented at a high level. Detailed scope and outcomes will be added as the work is ready to describe.",
     status: "In development", year: "2025—", role: "Founder, product & build",
     domain: "Product", stack: [],
-    frame: "generic", featured: false,
+    frame: "generic", liveUrl: "https://matchbox.cupr.app", githubUrl: site.github,
+    screenshot: { src: "work/matchbox/ui.png", alt: "Matchbox Glass & Smoke storefront hero" },
+    featured: false,
     accentNote: "Presented deliberately without invented features, metrics, users, or outcomes.",
     sections: [
       { heading: "Context", body: ["Matchbox is part of Jack's current body of work. This entry is intentionally kept minimal: it names the project without claiming features, users, or results that aren't ready to be stated."] },
@@ -124,6 +128,29 @@ const projects = [
       { heading: "System", body: ["System and architecture details are not published yet. They will follow the same narrative structure as the other case studies — context, problem, system, decisions, current state — when there's something concrete to show."] },
       { heading: "Decisions", body: ["The main decision so far is one of restraint: present Matchbox honestly and add depth when the work supports it."] },
       { heading: "Current state", body: ["In development. A fuller write-up is planned once the project is further along."] },
+    ],
+  },
+  {
+    slug: "cupr-smokeworks-infrastructure", name: "Cupr Smokeworks Infrastructure",
+    kicker: "Ecosystem maps & operational infrastructure",
+    summary: "Infrastructure and mapping layer for the Cupr / JCS ecosystem — including the shared geographic and operational picture at maps.cupr.app.",
+    status: "In development", year: "2025—", role: "Founder, systems & product",
+    domain: "Infrastructure · Maps · Operations", stack: ["Next.js", "Mapbox", "Vercel"],
+    frame: "generic", liveUrl: "https://maps.cupr.app", githubUrl: site.github,
+    screenshot: { src: "work/cupr-smokeworks-infrastructure/ui.png", alt: "JCS Ecosystem Map showing brands, commerce spine, and inventory network" },
+    featured: false,
+    accentNote: "Kept lighter on purpose: the maps surface is concrete; surrounding infra narrative stays high-level where it isn't finalized.",
+    sections: [
+      { heading: "Context", body: ["Cupr Smokeworks and the wider JCS ecosystem span products, places, and operations that need a shared spatial and infrastructural picture — not just a product UI for one app.", "The maps surface at maps.cupr.app is the public face of that layer: ecosystem geography and related operational context in one place."] },
+      { heading: "Problem", body: ["Without a dedicated infrastructure view, context scatters across tools and tribal knowledge. Operators and builders lose the through-line between sites, products, and how they connect."] },
+      { heading: "System", body: ["This entry covers the infrastructure and mapping layer that sits beneath and beside the product apps. The primary live surface today is the JCS Ecosystem maps experience — a map-first read on how the ecosystem is organized in space."] },
+      { heading: "Decisions", body: ["Lead with the map as the concrete artifact people can open, rather than waiting for a full ops console write-up.", "Keep the portfolio narrative short until deeper infrastructure documentation is ready to publish honestly."] },
+      { heading: "Current state", body: ["In development. Maps are live; fuller infrastructure documentation will expand as the system solidifies."] },
+    ],
+    systemMap: [
+      { label: "Ecosystem maps", detail: "maps.cupr.app" },
+      { label: "Sites & ops context", detail: "Shared geography" },
+      { label: "Product surfaces", detail: "Apps that sit above" },
     ],
   },
 ];
@@ -149,8 +176,17 @@ const bar = (w, accent) => `<span class="bar${accent ? " accent" : ""}" style="w
 
 // interface frames (mirror InterfaceFrame.tsx)
 function frameHTML(p) {
-  const chrome = (label, inner) =>
-    `<div class="chrome"><div class="chrome-bar"><span class="dotc"></span><span class="dotc"></span><span class="dotc"></span><span class="label">${e(label)}</span></div><div class="chrome-body">${inner}</div></div>`;
+  const chrome = (label, inner, bare) =>
+    `<div class="chrome"><div class="chrome-bar"><span class="dotc"></span><span class="dotc"></span><span class="dotc"></span><span class="label">${e(label)}</span></div>${bare ? inner : `<div class="chrome-body">${inner}</div>`}</div>`;
+
+  if (p.screenshot) {
+    const host = (p.liveUrl || "").replace(/^https?:\/\//, "").replace(/\/$/, "") || p.name.toLowerCase();
+    return chrome(
+      host,
+      `<div class="shot"><img src="${e(p.screenshot.src)}" alt="${e(p.screenshot.alt)}" loading="lazy" /></div>`,
+      true,
+    );
+  }
 
   if (p.frame === "compliance") {
     return chrome("cupr.os / compliance-studio", `
@@ -202,6 +238,25 @@ function frameHTML(p) {
     </div>`);
 }
 
+function projectLinksHTML(p, kind) {
+  const bits = [];
+  if (p.liveUrl) {
+    bits.push(
+      kind === "cta"
+        ? `<a class="live-cta" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>`
+        : `<a class="live-link" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>`,
+    );
+  }
+  if (p.githubUrl) {
+    bits.push(
+      kind === "cta"
+        ? `<a class="live-cta" href="${e(p.githubUrl)}" target="_blank" rel="noreferrer noopener" aria-label="View ${e(p.name)} on GitHub (opens in a new tab)">GitHub <span aria-hidden="true">\u2197</span></a>`
+        : `<a class="live-link" href="${e(p.githubUrl)}" target="_blank" rel="noreferrer noopener" aria-label="View ${e(p.name)} on GitHub (opens in a new tab)">GitHub <span aria-hidden="true">\u2197</span></a>`,
+    );
+  }
+  return bits.join("");
+}
+
 function caseDetail(p) {
   const secs = p.sections.map((s) =>
     `<div class="case-section"><h4>${e(s.heading)}</h4>${s.body.map((b) => `<p>${e(b)}</p>`).join("")}</div>`
@@ -217,7 +272,7 @@ function caseDetail(p) {
         <div class="mrow"><span class="mkey">Year</span><span class="mval">${e(p.year)}</span></div>
         <div class="mrow"><span class="mkey">Stack</span><span class="mval">${e(stackVal)}</span></div>
       </div>
-      ${p.liveUrl ? `<a class="live-cta" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>` : ""}
+      <div class="link-row">${projectLinksHTML(p, "cta")}</div>
     </aside>`;
   return `<div class="case-detail" id="detail-${p.slug}"><div class="case-grid"><div>${secs}${note}</div>${sidebar}</div></div>`;
 }
@@ -242,7 +297,7 @@ function workRow(p, i) {
         <div class="meta">${chips}</div>
         <div class="actions">
           <button class="read-more" data-expand="detail-${p.slug}" aria-expanded="false" aria-controls="detail-${p.slug}">Read the case study \u2192</button>
-          ${p.liveUrl ? `<a class="live-link" href="${e(p.liveUrl)}" target="_blank" rel="noreferrer noopener" aria-label="Visit the live ${e(p.name)} app (opens in a new tab)">Visit live app <span aria-hidden="true">\u2197</span></a>` : ""}
+          ${projectLinksHTML(p, "inline")}
         </div>
       </div>
     </div>

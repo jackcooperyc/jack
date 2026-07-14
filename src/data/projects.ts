@@ -39,8 +39,15 @@ export interface Project {
   accentNote?: string;
   /** Optional public URL of the live, deployed app for this project */
   liveUrl?: string;
+  /** Optional GitHub URL (org/profile acceptable until per-repo links exist) */
+  githubUrl?: string;
+  /** Real in-app UI shot; when set, replaces the abstract InterfaceFrame schematic */
+  screenshot?: { src: string; alt: string };
   featured: boolean;
 }
+
+/** Shared org GitHub until per-project public repos are published */
+export const ORG_GITHUB = "https://github.com/jackcooperyc";
 
 export const projects: Project[] = [
   {
@@ -55,6 +62,12 @@ export const projects: Project[] = [
     domain: "B2B SaaS · Regulated retail",
     stack: ["Next.js", "Frappe patterns", "Compliance adapters", "CRM"],
     frame: "compliance",
+    liveUrl: "https://os-demo.cupr.app",
+    githubUrl: ORG_GITHUB,
+    screenshot: {
+      src: "/work/cupr-os/ui.png",
+      alt: "CŪPR.OS operations dashboard with module navigation",
+    },
     featured: true,
     accentNote:
       "Positioned as an orchestration layer that sits above existing point-of-sale hardware, not a replacement for it.",
@@ -116,6 +129,7 @@ export const projects: Project[] = [
     stack: ["Next.js", "Drizzle", "Neon Postgres"],
     frame: "journal",
     liveUrl: "https://budbook.cupr.app",
+    githubUrl: ORG_GITHUB,
     featured: true,
     accentNote:
       "Recently explored under the Stashd: MT working name. Consumer-facing and personal in tone.",
@@ -177,6 +191,8 @@ export const projects: Project[] = [
     domain: "Operations · Agriculture · PWA",
     stack: ["Next.js 16", "Prisma 7", "Neon Postgres", "Vercel", "Mapbox"],
     frame: "vineyard",
+    liveUrl: "https://cev.cupr.app",
+    githubUrl: ORG_GITHUB,
     featured: true,
     accentNote:
       "Offline / PWA field mode is the central product challenge, not a nice-to-have.",
@@ -238,6 +254,7 @@ export const projects: Project[] = [
     stack: ["Next.js"],
     frame: "events",
     liveUrl: "https://budbeat.cupr.app",
+    githubUrl: ORG_GITHUB,
     featured: false,
     accentNote:
       "Implementation details are intentionally kept high-level where they aren't finalized.",
@@ -286,6 +303,12 @@ export const projects: Project[] = [
     domain: "Product",
     stack: [],
     frame: "generic",
+    liveUrl: "https://matchbox.cupr.app",
+    githubUrl: ORG_GITHUB,
+    screenshot: {
+      src: "/work/matchbox/ui.png",
+      alt: "Matchbox Glass & Smoke storefront hero",
+    },
     featured: false,
     accentNote:
       "Presented deliberately without invented features, metrics, users, or outcomes.",
@@ -320,6 +343,67 @@ export const projects: Project[] = [
           "In development. A fuller write-up is planned once the project is further along.",
         ],
       },
+    ],
+  },
+  {
+    slug: "cupr-smokeworks-infrastructure",
+    name: "Cupr Smokeworks Infrastructure",
+    kicker: "Ecosystem maps & operational infrastructure",
+    summary:
+      "Infrastructure and mapping layer for the Cupr / JCS ecosystem — including the shared geographic and operational picture at maps.cupr.app.",
+    status: "In development",
+    year: "2025—",
+    role: "Founder, systems & product",
+    domain: "Infrastructure · Maps · Operations",
+    stack: ["Next.js", "Mapbox", "Vercel"],
+    frame: "generic",
+    liveUrl: "https://maps.cupr.app",
+    githubUrl: ORG_GITHUB,
+    screenshot: {
+      src: "/work/cupr-smokeworks-infrastructure/ui.png",
+      alt: "JCS Ecosystem Map showing brands, commerce spine, and inventory network",
+    },
+    featured: false,
+    accentNote:
+      "Kept lighter on purpose: the maps surface is concrete; surrounding infra narrative stays high-level where it isn't finalized.",
+    sections: [
+      {
+        heading: "Context",
+        body: [
+          "Cupr Smokeworks and the wider JCS ecosystem span products, places, and operations that need a shared spatial and infrastructural picture — not just a product UI for one app.",
+          "The maps surface at maps.cupr.app is the public face of that layer: ecosystem geography and related operational context in one place.",
+        ],
+      },
+      {
+        heading: "Problem",
+        body: [
+          "Without a dedicated infrastructure view, context scatters across tools and tribal knowledge. Operators and builders lose the through-line between sites, products, and how they connect.",
+        ],
+      },
+      {
+        heading: "System",
+        body: [
+          "This entry covers the infrastructure and mapping layer that sits beneath and beside the product apps. The primary live surface today is the JCS Ecosystem maps experience — a map-first read on how the ecosystem is organized in space.",
+        ],
+      },
+      {
+        heading: "Decisions",
+        body: [
+          "Lead with the map as the concrete artifact people can open, rather than waiting for a full ops console write-up.",
+          "Keep the portfolio narrative short until deeper infrastructure documentation is ready to publish honestly.",
+        ],
+      },
+      {
+        heading: "Current state",
+        body: [
+          "In development. Maps are live; fuller infrastructure documentation will expand as the system solidifies.",
+        ],
+      },
+    ],
+    systemMap: [
+      { label: "Ecosystem maps", detail: "maps.cupr.app" },
+      { label: "Sites & ops context", detail: "Shared geography" },
+      { label: "Product surfaces", detail: "Apps that sit above" },
     ],
   },
 ];

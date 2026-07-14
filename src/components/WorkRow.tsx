@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { Project } from "@/data/projects";
 import { InterfaceFrame } from "./InterfaceFrame";
 import { CaseNarrative } from "./CaseNarrative";
+import { ProjectLinks } from "./ProjectLinks";
 import { StatusPill, StackList } from "./bits";
 
 /**
@@ -86,20 +87,7 @@ export function WorkRow({
               </span>
             </button>
 
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label={`Visit the live ${project.name} app (opens in a new tab)`}
-                className="link-underline inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text)]"
-              >
-                Visit live app
-                <span aria-hidden="true" className="text-[var(--muted)]">
-                  ↗
-                </span>
-              </a>
-            )}
+            <ProjectLinks project={project} />
           </div>
         </div>
       </div>
